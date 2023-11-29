@@ -2,22 +2,22 @@
 
 ## Introduction
 
-The mod-jobs-consumer module is one of two modules, alongside the mod-jobs-manager [https://github.com/mohamed2494/mod-jobs-consumer.git], designed to manage and process Merge jobs within the FOLIO system.
+The mod-jobs-consumer module is one of two modules, alongside the mod-jobs-consumer [https://github.com/mohamed2494/mod-jobs-consumer.git], designed to manage and process Merge jobs within the FOLIO system.
 
 ## Getting Started
 
 ### Prerequisites
 
-Before running the mod-jobs-manager module, ensure you have the following prerequisites installed:
+Before running the mod-jobs-consumer module, ensure you have the following prerequisites installed:
 
 * Java JDK (Version 11 or higher)
 * Apache Maven 3.3.x or higher
 
 ### Clone the Repository
 
-Clone the mod-jobs-manager repository from GitHub.
+Clone the mod-jobs-consumer repository from GitHub.
 
-git clone [https://github.com/mohamed2494/mod-jobs-manager.git]
+git clone [https://github.com/mohamed2494/mod-jobs-consumer.git]
 ### Configuration
 
 Update the `application.yml` file with relevant configurations, such as Kafka broker details, database connection settings, etc.
@@ -33,19 +33,19 @@ mvn clean package
 
 ### Run the module:
 ```bash
-java -jar target/mod-jobs-manager-fat.jar
+java -jar target/mod-jobs-consumer-fat.jar
 ```
 
 ### Build the Docker image:
 Build the Docker image:
 
 ```bash
-docker build -t mod-jobs-manager:latest .
+docker build -t mod-jobs-consumer:latest .
 
 ```
 ### Run the Docker container:
 ```bash
-docker run -p 8081:8081 mod-jobs-manager:latest
+docker run -p 8081:8081 mod-jobs-consumer:latest
 ```
 
 ## Database Configuration
