@@ -14,8 +14,16 @@ public class MergeEvent implements Serializable {
     private final String destination;
     private String status;
 
-    @JsonProperty("tenantId")
+    public String getTenantId() {
+        return tenantId;
+    }
+
+    public void setTenantId(String tenantId) {
+        this.tenantId = tenantId;
+    }
+
     private String tenantId;
+
 
     @JsonCreator
     public MergeEvent(
@@ -58,12 +66,15 @@ public class MergeEvent implements Serializable {
         return type;
     }
 
-
-    public String getTenantId() {
-        return tenantId;
-    }
-
-    public void setTenantId(String tenantId) {
-        this.tenantId = tenantId;
+    @Override
+    public String toString() {
+        return "MergeEvent{" +
+                "type='" + type + '\'' +
+                ", mergeId='" + mergeId + '\'' +
+                ", source='" + source + '\'' +
+                ", destination='" + destination + '\'' +
+                ", status='" + status + '\'' +
+                ", tenantId='" + tenantId + '\'' +
+                '}';
     }
 }

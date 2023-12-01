@@ -15,6 +15,14 @@ public class TypeBMergeConsumerService extends AbstractMergeConsumerService {
 
     @Override
     protected int mergeData(MergeEvent mergeEvent) {
+
+        try {
+            Thread.sleep(60 * 1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+
         return 0;
     }
 }

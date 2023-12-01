@@ -1,9 +1,6 @@
 package org.folio.factory;
 
-import org.folio.service.AbstractMergeConsumerService;
-import org.folio.service.TypeAMergeConsumerService;
-import org.folio.service.TypeBMergeConsumerService;
-import org.folio.service.TypeCMergeConsumerService;
+import org.folio.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,9 +20,9 @@ public class MergeConsumerFactory {
 
     public AbstractMergeConsumerService createConsumerService(String type) {
 
-        if ("TypeA".equalsIgnoreCase(type)) {
+        if (type.equalsIgnoreCase(String.valueOf(MergeJobConstants.MergeType.TYPE_A))) {
             return typeAMergeService;
-        } else if ("TypeB".equalsIgnoreCase(type)) {
+        } else if (type.equalsIgnoreCase(String.valueOf(MergeJobConstants.MergeType.TYPE_B))) {
             return typeBMergeService;
         }
         // Handle unknown merge types or return a default producer

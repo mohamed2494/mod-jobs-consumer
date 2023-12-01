@@ -23,7 +23,12 @@ public abstract class AbstractMergeConsumerService {
     public void consumeMergeEvent(MergeEvent mergeEvent) {
 
         try {
-            logger.info("AbstractMergeConsumerService MergeEvent started:  {}", mergeEvent);
+            logger.info("AbstractMergeConsumerService MergeEvent started:  {}", mergeEvent.toString());
+
+
+            mergeEvent.setStatus(String.valueOf(MergeJobConstants.MergeJobStatus.PENDING));
+
+            kafkaTemplate.send(getTopic(), mergeEvent);
 
             this.mergeData(mergeEvent);
 
